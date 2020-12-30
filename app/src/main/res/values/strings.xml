@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Rabbit_Customer</string>
-    <string name="loginID">User ID</string>
-    <string name="loginPW">Password</string>
+    <string name="etLoginID">User ID</string>
+    <string name="etLoginPW">Password</string>
     <string name="btnLogin">Login</string>
-    <string name="dashboard_title">Hello World</string>
+    <string name="btnRegister">Register</string>
+    <string name="dashboard_title">This is Dashboard Page</string>
+    <string name="register_title">This is Register Page</string>
 </resources>

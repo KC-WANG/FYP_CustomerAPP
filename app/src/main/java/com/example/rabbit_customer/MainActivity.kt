@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun login(view: View) {
-        val id = findViewById<EditText>(R.id.loginID).text.toString()
-        val password = findViewById<EditText>(R.id.loginPW).text.toString()
+        val id = findViewById<EditText>(R.id.etLoginID).text.toString()
+        val password = findViewById<EditText>(R.id.etLoginPW).text.toString()
 
 
         if(id == "test" && password == "abc123***") {
@@ -24,5 +24,10 @@ class MainActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Invalid login ID or Password", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun register(view: View) {
+        val intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
     }
 }
