@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/newOrderFragment"
+        android:icon="@drawable/ic_new_order"
+        android:title="@string/new_order_title" />
+    <item
+        android:id="@+id/currentOrderFragment"
+        android:icon="@drawable/ic_current_order"
+        android:title="@string/current_order_title" />
+    <item
+        android:id="@+id/pastOrderFragment"
+        android:icon="@drawable/ic_past_order"
+        android:title="@string/past_order_title" />
+    <item
+        android:id="@+id/myAccountFragment"
+        android:icon="@drawable/ic_my_account"
+        android:title="@string/my_account_title" />
+</menu>

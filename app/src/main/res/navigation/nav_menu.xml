@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_menu"
+    app:startDestination="@id/newOrderFragment">
+    <fragment
+        android:id="@+id/newOrderFragment"
+        android:name="com.example.rabbit_customer.NewOrderFragment"
+        android:label="fragment_new_order"
+        tools:layout="@layout/fragment_new_order" />
+    <fragment
+        android:id="@+id/pastOrderFragment"
+        android:name="com.example.rabbit_customer.PastOrderFragment"
+        android:label="fragment_past_order"
+        tools:layout="@layout/fragment_past_order" />
+    <fragment
+        android:id="@+id/currentOrderFragment"
+        android:name="com.example.rabbit_customer.CurrentOrderFragment"
+        android:label="fragment_current_order"
+        tools:layout="@layout/fragment_current_order" />
+    <fragment
+        android:id="@+id/myAccountFragment"
+        android:name="com.example.rabbit_customer.MyAccountFragment"
+        android:label="fragment_my_account"
+        tools:layout="@layout/fragment_my_account" />
+</navigation>
