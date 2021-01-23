@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/etLoginID"
+        android:id="@+id/tvLoginID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.365" />
 
     <EditText
-        android:id="@+id/etLoginPW"
+        android:id="@+id/tvLoginPW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etLoginID"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginID"
         app:layout_constraintVertical_bias="0.061" />
 
     <Button
@@ -44,7 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.309"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etLoginPW"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginPW"
         app:layout_constraintVertical_bias="0.116" />
 
     <Button
@@ -57,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toEndOf="@+id/btnLogin"
-        app:layout_constraintTop_toBottomOf="@+id/etLoginPW"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginPW"
         app:layout_constraintVertical_bias="0.116" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

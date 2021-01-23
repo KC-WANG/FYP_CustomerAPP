@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "927124213059",
+    "firebase_url": "https://fyp-rabbit-default-rtdb.firebaseio.com",
+    "project_id": "fyp-rabbit",
+    "storage_bucket": "fyp-rabbit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927124213059:android:6731d9b66846133aabb3f6",
+        "android_client_info": {
+          "package_name": "com.example.rabbit_customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927124213059-dstfcnlk3sjh0kkpsq4pc12fp4f59c2l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKa3OyHsnfNO_FITMO3niGBad1xbbUZWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927124213059-dstfcnlk3sjh0kkpsq4pc12fp4f59c2l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

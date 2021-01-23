@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun login(view: View) {
-        val id = findViewById<EditText>(R.id.etLoginID).text.toString()
-        val password = findViewById<EditText>(R.id.etLoginPW).text.toString()
+        val id = findViewById<EditText>(R.id.tvLoginID).text.toString()
+        val password = findViewById<EditText>(R.id.tvLoginPW).text.toString()
 
 
         if(id == "test" && password == "abc123***") {
