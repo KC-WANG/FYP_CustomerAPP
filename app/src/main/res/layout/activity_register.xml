@@ -71,7 +71,6 @@
             tools:text="abc@gmail.com" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_register_password"
         android:layout_width="match_parent"
