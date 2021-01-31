@@ -11,6 +11,6 @@
     <string name="current_order_title">Current Order</string>
     <string name="past_order_title">Past Order</string>
     <string name="my_account_title">My Account</string>
-    <string name="dont_have_an_account">Don 't have an account?</string>
+    <string name="dont_have_an_account">Do not have an account?</string>
     <string name="already_have_an_account">Already have an account?</string>
 </resources>
