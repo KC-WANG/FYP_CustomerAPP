@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/iVFoodIcon"
@@ -81,7 +81,6 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
-        android:onClick="login"
         android:text="@string/Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
