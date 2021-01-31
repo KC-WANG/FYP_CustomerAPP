@@ -73,7 +73,6 @@ class LoginActivity : AppCompatActivity() {
 								Intent(this@LoginActivity, DashboardActivity::class.java)
 							intent.flags =
 								Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-							intent.putExtra("user_id", FirebaseAuth.getInstance().currentUser!!.uid)
 							startActivity(intent)
 							finish()
 						} else {
