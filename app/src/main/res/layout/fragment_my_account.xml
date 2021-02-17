@@ -43,7 +43,9 @@
             android:id="@+id/et_profile_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="textEmailAddress"
+            android:inputType="none"
+            android:clickable="false"
+            android:focusable="false"
             tools:text="abc@gmail.com" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,7 +65,9 @@
             android:id="@+id/et_profile_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="phone"
+            android:inputType="none"
+            android:clickable="false"
+            android:focusable="false"
             tools:text="12345678" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -125,7 +129,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_Register"
+        android:id="@+id/btn_Save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -151,7 +155,7 @@
         android:background="@android:color/holo_red_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Register" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_Save" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

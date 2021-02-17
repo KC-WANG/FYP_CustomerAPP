@@ -4,6 +4,7 @@ import android.app.ProgressDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -25,6 +26,7 @@ import com.google.firebase.database.ktx.getValue
 
 class MyAccountFragment : Fragment() {
 	private lateinit var btn_Logout: Button
+	private lateinit var btn_Save: Button
 	private lateinit var mAuth: FirebaseAuth
 
 	private lateinit var et_profile_name: EditText
@@ -48,9 +50,22 @@ class MyAccountFragment : Fragment() {
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
-		btn_Logout = rootView.findViewById(R.id.btn_Logout)
 
+		mAuth = FirebaseAuth.getInstance()
+
+		et_profile_name = rootView.findViewById<EditText>(R.id.et_profile_name)
+		et_profile_email = rootView.findViewById<EditText>(R.id.et_profile_email)
+		et_profile_phone = rootView.findViewById<EditText>(R.id.et_profile_phone)
+		et_profile_curr_pwd = rootView.findViewById<EditText>(R.id.et_profile_curr_pwd)
+		et_profile_new_pwd = rootView.findViewById<EditText>(R.id.et_profile_new_pwd)
+		et_profile_new_confirm_pwd =
+			rootView.findViewById<EditText>(R.id.et_profile_new_confirm_pwd)
+
+		btn_Logout = rootView.findViewById<Button>(R.id.btn_Logout)
 		btn_Logout.setOnClickListener { logout() }
+
+		btn_Save = rootView.findViewById<Button>(R.id.btn_Save)
+		btn_Save.setOnClickListener { save() }
 	}
 
 	override fun onResume() {
@@ -59,16 +74,7 @@ class MyAccountFragment : Fragment() {
 	}
 
 	private fun initData() {
-		mAuth = FirebaseAuth.getInstance()
 		val user = mAuth.currentUser
-
-		et_profile_name = rootView.findViewById(R.id.et_profile_name)
-		et_profile_email = rootView.findViewById(R.id.et_profile_email)
-		et_profile_phone = rootView.findViewById(R.id.et_profile_phone)
-		et_profile_curr_pwd = rootView.findViewById(R.id.et_profile_curr_pwd)
-		et_profile_new_pwd = rootView.findViewById(R.id.et_profile_new_pwd)
-		et_profile_new_confirm_pwd = rootView.findViewById(R.id.et_profile_new_confirm_pwd)
-
 
 		val myDf = FirebaseDatabase.getInstance().reference.child("User").child(user!!.uid)
 		myDf.addValueEventListener(object : ValueEventListener {
@@ -83,6 +89,60 @@ class MyAccountFragment : Fragment() {
 		})
 
 	}
+
+	private fun save() {
+		when {
+			TextUtils.isEmpty(et_profile_name.text.toString().trim { it <= ' ' }) -> {
+				Toast.makeText(
+					activity,
+					"Please Enter Name.",
+					Toast.LENGTH_SHORT
+				).show()
+			}
+
+			TextUtils.isEmpty(et_profile_curr_pwd.text.toString().trim { it <= ' ' }) -> {
+				Toast.makeText(
+					activity,
+					"Please Enter Password.",
+					Toast.LENGTH_SHORT
+				).show()
+			}
+
+			else -> {
+				val name: String = et_profile_name.text.toString().trim { it <= ' ' }
+				val curr_pwd: String = et_profile_curr_pwd.text.toString().trim { it <= ' ' }
+				val new_pwd: String = et_profile_new_pwd.text.toString().trim { it <= ' ' }
+				val new_confirm_pwd: String = et_profile_new_confirm_pwd.text.toString().trim { it <= ' ' }
+
+				val user = mAuth.currentUser
+
+				val myDf = FirebaseDatabase.getInstance().reference.child("User").child(user!!.uid)
+
+
+				myDf.addValueEventListener(object : ValueEventListener {
+					override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+
+						if (curr_pwd != userInfo.password)
+							Toast.makeText(
+								activity,
+								"Wrong Current Password",
+								Toast.LENGTH_SHORT
+							).show()
+						else
+
+
+
+					}
+
+					override fun onCancelled(databaseError: DatabaseError) {}
+				})
+
+			}
+
+		}
+	}
+
 
 	private fun logout() {
 		activity?.let {
