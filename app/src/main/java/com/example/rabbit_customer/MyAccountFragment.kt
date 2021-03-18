@@ -15,6 +15,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.rabbit_customer.models.User
+import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
@@ -110,33 +111,20 @@ class MyAccountFragment : Fragment() {
 
 			else -> {
 				val name: String = et_profile_name.text.toString().trim { it <= ' ' }
+				val email: String = et_profile_email.text.toString().trim { it <= ' ' }
 				val curr_pwd: String = et_profile_curr_pwd.text.toString().trim { it <= ' ' }
 				val new_pwd: String = et_profile_new_pwd.text.toString().trim { it <= ' ' }
 				val new_confirm_pwd: String = et_profile_new_confirm_pwd.text.toString().trim { it <= ' ' }
 
-				val user = mAuth.currentUser
+				val user = mAuth.currentUser!!
 
-				val myDf = FirebaseDatabase.getInstance().reference.child("User").child(user!!.uid)
+				val credential = EmailAuthProvider
+					.getCredential(email, curr_pwd)
 
-
-				myDf.addValueEventListener(object : ValueEventListener {
-					override fun onDataChange(dataSnapshot: DataSnapshot) {
-
-
-						if (curr_pwd != userInfo.password)
-							Toast.makeText(
-								activity,
-								"Wrong Current Password",
-								Toast.LENGTH_SHORT
-							).show()
-						else
-
-
-
+				user.reauthenticate(credential)
+					.addOnCompleteListener {
+						if(!it.isSuccessful)
 					}
-
-					override fun onCancelled(databaseError: DatabaseError) {}
-				})
 
 			}
 
